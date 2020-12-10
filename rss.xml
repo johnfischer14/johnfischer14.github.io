@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Publark Devblog]]></title><description><![CDATA[Tech, blog, gatsby, contentful, iOS development, Android development, Xamarin, claymation]]></description><link>https://publark.com/publark</link><image><url>https://publark.com/publark/icons/icon-512x512.png</url><title>Publark Devblog</title><link>https://publark.com/publark</link></image><generator>GatsbyJS</generator><lastBuildDate>Thu, 10 Dec 2020 20:08:35 GMT</lastBuildDate><atom:link href="https://publark.com/publark/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Publishing with Contentful, Gatsby Novela, and Medium]]></title><description><![CDATA[Slugging through contentful integration]]></description><link>https://publark.com/publark/publishing-contentful-gatsby-novela-medium</link><guid isPermaLink="false">https://publark.com/publark/publishing-contentful-gatsby-novela-medium</guid><pubDate>Wed, 02 Dec 2020 14:40:00 GMT</pubDate><content:encoded>&lt;p&gt;There are endless content platform solutions out there for bloggers and developers alike to generate, manage, and present content for their readers. Contentful in particular provides a well documented &lt;a href=&quot;https://www.contentful.com/developers/docs/references/content-delivery-api/&quot; title=&quot;Contentful API&quot;&gt;Content Delivery API&lt;/a&gt; which allows Gatsby.js sites to easily publish your content managed in Contentful! I&apos;ll show you how to do this and even cross-post to Medium!&lt;/p&gt;
+&lt;h1&gt;Contentful&lt;/h1&gt;
+&lt;p&gt;For many bloggers and devs Contentful may be more than you need. However what I&apos;ve found even as a newcomer to the world of content creation is that it provides enough features and scalability to make the free tier absolutely worth it. &lt;/p&gt;
+&lt;p&gt;If you haven&apos;t already, head on over to &lt;a href=&quot;https://www.contentful.com/sign-up/&quot;&gt;https://www.contentful.com/sign-up/&lt;/a&gt; and get yourself a free tier account. &lt;/p&gt;
+&lt;p&gt;Once you&apos;re signed up and logged in Contentful will let you generate an Example Space. This space already has content models populated, which lets you create content right away! These are great examples and feel free to play around with how the platform lets you create content based on your content models.&lt;/p&gt;
+&lt;p&gt;Once you&apos;re done creating, and playing, we&apos;re going to delete the example space. Contentful only allows one space in their free tier. And since we want to import our own content model specific to our personal Gatsby.js blog we&apos;ll have to delete the example. &lt;/p&gt;
+&lt;p&gt;In your Contentful &lt;strong&gt;Space home&lt;/strong&gt; Select &lt;strong&gt;Settings&lt;/strong&gt; to bring up a drop down. Choose &lt;strong&gt;General settings&lt;/strong&gt; under &lt;strong&gt;Space settings&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;From here scroll down to the &lt;strong&gt;Danger zone&lt;/strong&gt;, and select &lt;strong&gt;Delete space&lt;/strong&gt; and all its contents. Follow the prompts to delete your example space. &lt;/p&gt;
+&lt;p&gt;Contentful should provide you the option to generate a new space now, or it&apos;s available in the top left menu.&lt;/p&gt;
+&lt;h1&gt;Gatsby&lt;/h1&gt;
+&lt;p&gt;Assuming you&apos;ve already read &lt;em&gt;Launching your personal blog with Gatsby and Novela&lt;/em&gt;, then you should already have a local Gatsby starter blog setup. However the steps below can be tailored to work with any Gatsby starter that supports Contentful.&lt;/p&gt;
+&lt;h2&gt;Configure gatsby-source-contentful plugin&lt;/h2&gt;
+&lt;h4&gt;Install plugin&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;npm install gatsby-source-contentful&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Add Contentful Space ID and Api Key to dotenv&lt;/h4&gt;
+&lt;p&gt;Create and/or edit file: .env
+Add the following lines:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CONTENTFUL_SPACE_ID= YourSpaceIdHere
+CONTENTFUL_ACCESS_TOKEN= YourAccessTokenHere
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can find your Space ID and Content Delivery API - access token in your Contentful Space Home at &lt;strong&gt;Settings&lt;/strong&gt; -&gt; &lt;strong&gt;API Keys&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;Modify gatsby-config.js&lt;/h4&gt;
+&lt;p&gt;Add dotenv require to top of file. Above module.exports
+&lt;code&gt;const dotenv = require(&quot;dotenv&quot;).config()&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Add plugin config to plugins object:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{    
+  resolve: &apos;gatsby-source-contentful&apos;,
+  options: {
+    spaceId: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  },
+},
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Set Novela Content Path by setting options: { sources: { contentful:true }}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;resolve: &quot;@narative/gatsby-theme-novela&quot;,
+  options: {
+    contentPosts: &quot;content/posts&quot;,
+    contentAuthors: &quot;content/authors&quot;,
+    basePath: &quot;/&quot;,
+    authorsPage: true,
+    sources: {
+      //local: true,
+      contentful: true,
+    },
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Import Novela&apos;s content model to Contentful&lt;/h2&gt;
+&lt;h4&gt;Install Contentful CLI&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;npm install -g contentful-cli&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Authenticate with your Contentful Space&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;contentful login&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Import Novela&apos;s content model&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;contentful space import --spaice-id YourSpaceIdHere --content-file ./node_modules/@narative/gatsby-theme-novela/contentful/contentful-export.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You should be able to edit your content in contentful now!
+Note: It may take a few minutes for the contentmodel to propogate to the content page in Contentful. But once it has, you can create new content right on Contentful.&lt;/p&gt;
+&lt;h2&gt;Run with Gatsby&lt;/h2&gt;
+&lt;p&gt;Now that you&apos;ve configured everything in gatsby-config.js your gatsby build will automatically pull in the Contentful content. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;gatsby develop&lt;/code&gt; &lt;/p&gt;
+&lt;p&gt;And you&apos;ll see your new post from Contentful!&lt;/p&gt;
+&lt;h4&gt;Tips&lt;/h4&gt;
+&lt;p&gt;If you make updates to existing Contentful content but have already pulled that content with &lt;code&gt;gatsby develop&lt;/code&gt; then you will want to run &lt;code&gt;gatsby clean&lt;/code&gt; to delete the cache. This will force a pull from the Contentful API&lt;/p&gt;
+&lt;p&gt;Novela has some default articles and authors in the local space. Everything in your local space is automatically pulled even if you have sources local set to false and source contentful set true.&lt;/p&gt;
+&lt;h1&gt;Medium&lt;/h1&gt;
+&lt;p&gt;Publishing to Medium is easy if you&apos;ve deployed to a public site host. In your medium account click on your profile picture, and select &lt;strong&gt;Stories&lt;/strong&gt;
+In &lt;strong&gt;Your Stories&lt;/strong&gt; Click the Import a story button and paste in your posts public URL.&lt;/p&gt;</content:encoded></item></channel></rss>
