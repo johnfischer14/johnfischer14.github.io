@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Publark Devblog]]></title><description><![CDATA[Tech, blog, gatsby, contentful, iOS development, Android development, Xamarin, claymation]]></description><link>https://publark.com/publark</link><image><url>https://publark.com/publark/icons/icon-512x512.png</url><title>Publark Devblog</title><link>https://publark.com/publark</link></image><generator>GatsbyJS</generator><lastBuildDate>Thu, 10 Dec 2020 20:37:41 GMT</lastBuildDate><atom:link href="https://publark.com/publark/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Publishing with Contentful, Gatsby Novela, and Medium]]></title><description><![CDATA[Slugging through contentful integration]]></description><link>https://publark.com/publark/publishing-contentful-gatsby-novela-medium</link><guid isPermaLink="false">https://publark.com/publark/publishing-contentful-gatsby-novela-medium</guid><pubDate>Wed, 02 Dec 2020 14:40:00 GMT</pubDate><content:encoded>&lt;p&gt;There are endless content platform solutions out there for bloggers and developers alike to generate, manage, and present content for their readers. Contentful in particular provides a well documented &lt;a href=&quot;https://www.contentful.com/developers/docs/references/content-delivery-api/&quot; title=&quot;Contentful API&quot;&gt;Content Delivery API&lt;/a&gt; which allows Gatsby.js sites to easily publish your content managed in Contentful! I&apos;ll show you how to do this and even cross-post to Medium!&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Publark Devblog]]></title><description><![CDATA[Tech, blog, gatsby, contentful, iOS development, Android development, Xamarin, claymation]]></description><link>https://publark.com/publark</link><image><url>https://publark.com/publark/icons/icon-512x512.png</url><title>Publark Devblog</title><link>https://publark.com/publark</link></image><generator>GatsbyJS</generator><lastBuildDate>Fri, 11 Dec 2020 05:27:59 GMT</lastBuildDate><atom:link href="https://publark.com/publark/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Publishing with Contentful, Gatsby Novela, and Medium]]></title><description><![CDATA[Slugging through contentful integration]]></description><link>https://publark.com/publark/publishing-contentful-gatsby-novela-medium</link><guid isPermaLink="false">https://publark.com/publark/publishing-contentful-gatsby-novela-medium</guid><pubDate>Wed, 02 Dec 2020 14:40:00 GMT</pubDate><content:encoded>&lt;p&gt;There are endless content platform solutions out there for bloggers and developers alike to generate, manage, and present content for their readers. Contentful in particular provides a well documented &lt;a href=&quot;https://www.contentful.com/developers/docs/references/content-delivery-api/&quot; title=&quot;Contentful API&quot;&gt;Content Delivery API&lt;/a&gt; which allows Gatsby.js sites to easily publish your content managed in Contentful! I&apos;ll show you how to do this and even cross-post to Medium!&lt;/p&gt;
 &lt;h1&gt;Contentful&lt;/h1&gt;
 &lt;p&gt;For many bloggers and devs Contentful may be more than you need. However what I&apos;ve found even as a newcomer to the world of content creation is that it provides enough features and scalability to make the free tier absolutely worth it. &lt;/p&gt;
 &lt;p&gt;If you haven&apos;t already, head on over to &lt;a href=&quot;https://www.contentful.com/sign-up/&quot;&gt;https://www.contentful.com/sign-up/&lt;/a&gt; and get yourself a free tier account. &lt;/p&gt;
@@ -8,7 +8,7 @@
 &lt;p&gt;From here scroll down to the &lt;strong&gt;Danger zone&lt;/strong&gt;, and select &lt;strong&gt;Delete space&lt;/strong&gt; and all its contents. Follow the prompts to delete your example space. &lt;/p&gt;
 &lt;p&gt;Contentful should provide you the option to generate a new space now, or it&apos;s available in the top left menu.&lt;/p&gt;
 &lt;h1&gt;Gatsby&lt;/h1&gt;
-&lt;p&gt;Assuming you&apos;ve already read &lt;em&gt;Launching your personal blog with Gatsby and Novela&lt;/em&gt;, then you should already have a local Gatsby starter blog setup. However the steps below can be tailored to work with any Gatsby starter that supports Contentful.&lt;/p&gt;
+&lt;p&gt;Assuming you&apos;ve already read &lt;a href=&quot;https://publark.com/host-gatsby-novela-gh-pages&quot;&gt;Host your own blog with Gatsby, Novela, and GitHub Pages&lt;/a&gt;, then you should already have a local Gatsby starter blog setup. However the steps below can be tailored to work with any Gatsby starter that supports Contentful.&lt;/p&gt;
 &lt;h2&gt;Configure gatsby-source-contentful plugin&lt;/h2&gt;
 &lt;h4&gt;Install plugin&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;npm install gatsby-source-contentful&lt;/code&gt;&lt;/p&gt;
@@ -62,4 +62,48 @@ Note: It may take a few minutes for the contentmodel to propogate to the content
 &lt;p&gt;Novela has some default articles and authors in the local space. Everything in your local space is automatically pulled even if you have sources local set to false and source contentful set true.&lt;/p&gt;
 &lt;h1&gt;Medium&lt;/h1&gt;
 &lt;p&gt;Publishing to Medium is easy if you&apos;ve deployed to a public site host. In your medium account click on your profile picture, and select &lt;strong&gt;Stories&lt;/strong&gt;
-In &lt;strong&gt;Your Stories&lt;/strong&gt; Click the Import a story button and paste in your posts public URL.&lt;/p&gt;</content:encoded></item></channel></rss>
+In &lt;strong&gt;Your Stories&lt;/strong&gt; Click the Import a story button and paste in your posts public URL.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Host your own free blog with Gatsby, Novela Theme, and Github Pages]]></title><description><![CDATA[How to launch your own gorgeous blog for free with Gatsby, Novela Theme, and Github Pages!]]></description><link>https://publark.com/publark/host-gatsby-novela-gh-pages</link><guid isPermaLink="false">https://publark.com/publark/host-gatsby-novela-gh-pages</guid><pubDate>Wed, 02 Dec 2020 02:00:00 GMT</pubDate><content:encoded>&lt;p&gt;If you&apos;re looking to launch your own blog and self host then it&apos;s worth looking at buidling a Gatsby site and deploying to Github. Github Pages provides a perfect free hosting platform for any static website and Gatsby&apos;s gh-pages plugin makes the integration simple. In this post I&apos;ll cover how to setup a Gatsby blog using the Novela Theme, and deploy it to Github Pages.&lt;/p&gt;
+&lt;h1&gt;Installing Gatsby&lt;/h1&gt;
+&lt;p&gt;Gatsby requires npm and Node.js so if you don&apos;t have those already head on over to &lt;a href=&quot;https://nodejs.org/en/download/&quot; title=&quot;nodejs.org&quot;&gt;nodejs.org&lt;/a&gt; and go through the install for your system.&lt;/p&gt;
+&lt;h4&gt;Install the gatsby command utilities&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;npm install -g gatsby-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The Gatsby Command Line will let you deploy and run your gatsby site locally for testing.&lt;/p&gt;
+&lt;h4&gt;Initialize Gatsby Starter Site from Novela&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;gatsby new your-blog-name https://github.com/narative/gatsby-starter-novela
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Replace &quot;your-blog-name&quot; with whatever you want your project to be called.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;gatsby new&lt;/code&gt; pulls a project from an existing source you can use any theme you&apos;d like, but I certainly recommend the Novela theme for a well designed blog. Check out their live demo here: &lt;a href=&quot;https://novela.narative.co/&quot;&gt;novela.narative.co&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Deploy to Github Pages&lt;/h1&gt;
+&lt;p&gt;Deploying to Github pages is made easy by the Gatsby gh-pages package. Github also provides static hosting on any public repo.&lt;/p&gt;
+&lt;h4&gt;Configure Github repo for Pages&lt;/h4&gt;
+&lt;p&gt;Github Pages requires a new repo to be created and named &lt;em&gt;username&lt;/em&gt;.github.io where &lt;em&gt;username&lt;/em&gt; is your github username. This will allow github to point to your static pages with a subdomain using your username. &lt;/p&gt;
+&lt;p&gt;You can configure a custom domain at any time, but if you use a single custom domain across multiple repos, you&apos;ll want the root site, to be in this &lt;em&gt;username&lt;/em&gt;.github.io repo.&lt;/p&gt;
+&lt;p&gt;Once you have your new username specific repo, go to the repo &lt;strong&gt;Settings&lt;/strong&gt; and scroll down to find Github pages. Select a branch and click Save to publish your pages site. It will be live quickly, within a minute or two.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;//images.ctfassets.net/9lz7q3urj2ls/7sYpPThuVEtjdZ3OeuEZyE/d9b2dfe5fc55d18257b7285d77ea3a03/Screenshot-gh-pages.png&quot;&gt;GH Pages&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;Install gh-pages&lt;/h4&gt;
+&lt;p&gt;Go back to your shell and install gh-pages in your project directory:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install gh-pages --save-dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Add deploy script to package.json&lt;/h4&gt;
+&lt;p&gt;Edit package.json and add the deploy line to your scripts object.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &quot;scripts&quot;: {
+    &quot;deploy&quot;: &quot;gatsby build --prefix-paths &amp;#x26;&amp;#x26; gh-pages -d public&quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Add Github repo prefix path to gatsby-config.js&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;This step is only necessary if you publish to a repo that is not your root(&lt;em&gt;username&lt;/em&gt;.github.io) repository&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Copygatsby-config.js: copy code to clipboard
+module.exports = {
+  pathPrefix: &quot;/reponame&quot;,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Test and Publish&lt;/h4&gt;
+&lt;p&gt;To test your site:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gatsby develop
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To publish to GitHub Pages&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm run deploy
+&lt;/code&gt;&lt;/pre&gt;</content:encoded></item></channel></rss>
